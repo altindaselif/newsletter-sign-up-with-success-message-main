@@ -23,16 +23,7 @@ const clearError = function () {
   formError.style.display = "none";
 };
 
-const closeModal = function () {
-  modal.classList.remove("active");
-  overlay.classList.remove("active");
-
-  formInput.value = "";
-
-  clearError();
-};
-
-form.addEventListener("submit", function (e) {
+const openModal = function (e) {
   e.preventDefault();
 
   const emailValue = formInput.value.trim();
@@ -44,10 +35,23 @@ form.addEventListener("submit", function (e) {
     modalEmail.textContent = emailValue;
     modal.classList.add("active");
     overlay.classList.add("active");
-  }
-});
 
+    modal.focus();
+  }
+};
+
+const closeModal = function () {
+  modal.classList.remove("active");
+  overlay.classList.remove("active");
+
+  formInput.value = "";
+
+  clearError();
+};
+
+form.addEventListener("submit", openModal);
 btnCloseModal.addEventListener("click", closeModal);
+overlay.addEventListener("click", closeModal);
 
 formInput.addEventListener("input", function () {
   if (formInput.classList.contains("error")) {

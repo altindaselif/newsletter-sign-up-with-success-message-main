@@ -68,21 +68,28 @@
             alt="Newsletter Picture"
         /></picture>
       </section>
-      <section class="modal">
+      <section
+        class="modal"
+        role="dialog"
+        aria-modal="true"
+        aria-labelledby="modal-title-id"
+        aria-describedby="modal-desc-id"
+        tabindex="-1"
+      >
         <img
           class="success-icon"
           src="images/icon-success.svg"
           alt="Success Icon"
         />
-        <h2 class="modal-title">Thanks for subscribing!</h2>
-        <p class="modal-info">
+        <h2 id="modal-title-id" class="modal-title">Thanks for subscribing!</h2>
+        <p id="modal-desc-id" class="modal-info">
           A confirmation email has been sent to
           <strong class="modal-email">ash@loremcompany.com</strong>. Please open
           it and click the button inside to confirm your subscription.
         </p>
-        <button class="close-modal">Dismiss message</button>
+        <button type="button" class="close-modal">Dismiss message</button>
       </section>
-      <section class="overlay"></section>
+      <div class="overlay"></div>
     </main>
   </body>
 </html>
